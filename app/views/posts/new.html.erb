@@ -1,0 +1,17 @@
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %><br><br>
+
+  Blogger: 
+  <%= f.collection_select(:blogger_id, Blogger.all, :id, :name) %><br><br>
+
+  Destination: 
+  <%= f.collection_select(:destination_id, Destination.all, :id, :name) %><br><br>
+
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <%= f.submit "Submit Post" %> 
+  <% end %>

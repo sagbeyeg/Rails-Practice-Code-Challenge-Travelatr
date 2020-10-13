@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration[5.1]
       t.integer :likes
       t.integer :blogger_id
       t.integer :destination_id
-
+      
       t.timestamps
     end
   end

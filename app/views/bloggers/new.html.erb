@@ -1,0 +1,15 @@
+<h1>Blogger Form</h1>
+
+<%= form_tag bloggers_path do %>
+    <label> Name: </label><br>
+    <%= text_field_tag :name %> <br>
+    <label>Bio: </label><br>
+    <%= text_field_tag :bio %> <br>
+    <label>Age: </label><br>
+    <%= text_field_tag :age %> <br>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+    <%= submit_tag "Submit Student" %> 
+
+    <% end %> 
+
