@@ -1,0 +1,17 @@
+<h1><%= @destination.name %> Destination Page</h1>
+
+<strong>Name:</strong> <%= @destination.name %><br><br>
+<strong>Country:</strong> <%= @destination.country %><br><br>
+
+
+<h4>Most Recent Posts</h4>
+
+  <% @destination.posts.last(5).collect do |p|  %>
+    <%= link_to p.title, post_path(p) %><br>
+  <% end %><br><br>
+
+<strong>Featured Post:</strong>
+<%= link_to @destination.most_liked_post.title, post_path(@destination.most_liked_post.id) %><br><br>
+
+<strong>Average Age of Bloggers Writing About This Location:</strong>
+<%= @destination.bloggers.uniq.inject(0){ |sum, b| sum + b.age }/@destination.bloggers.count %>

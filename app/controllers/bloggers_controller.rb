@@ -10,7 +10,7 @@ class BloggersController < ApplicationController
 
     def create
         @blogger = Blogger.create(blogger_params)
-        redirect_to bloggers_path
+        redirect_to blogger_path
     end
 
     def show

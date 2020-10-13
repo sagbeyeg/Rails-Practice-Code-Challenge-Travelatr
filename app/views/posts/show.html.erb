@@ -4,9 +4,8 @@ Title: <%= @post.title %><br><br>
 Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger_id) %><br><br>
 Destination: <%= link_to @post.destination.name, destination_path(@post.destination_id) %><br><br>
 Content: <%= @post.content %><br><br>
-Likes: <%= @post.likes %><br>
 
-<%= button_to "Like", post_path(@post), method: :patch %>
+<h3><%= button_to "Likes: #{@post.likes}", post_path(@post), method: :patch %></h3>
 
 
 <%# button_to "Like", post_path(@post), method: : %>

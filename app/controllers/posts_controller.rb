@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post.likes += 1
+        @post.likes += 1 # our new posts aren't getting created with a likes attribute so the like button doesn't work for thrm
         @post.save
         redirect_to post_path(@post)
     end
@@ -32,6 +32,6 @@ class PostsController < ApplicationController
     def post_params
         #{"utf8"=>"✓", "authenticity_token"=>"zQPnyweUJMlkopXM7sxVs6TnVX/oV/zg1eLO9hln5EuKKR7nJDNl6WdkyZALGA3IVEic4xC6+6TtASzIAZw5tg==", 
         #"post"=>{"title"=>"Done", "content"=>"vcegiayvc; viuwgrv; abe iebv ieb", "blogger_id"=>"1", "destination_id"=>"1"}, "commit"=>"Submit Post"}
-      params.require(:post).permit(:title, :content, :blogger_id, :destination_id)
+      params.require(:post).permit(:title, :content, :blogger_id, :destination_id, :likes)
     end    
 end
